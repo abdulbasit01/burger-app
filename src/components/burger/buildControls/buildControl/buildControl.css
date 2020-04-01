@@ -1,0 +1,22 @@
+.buildControl{
+    display: flex;
+    justify-content: center;
+    margin: 5px 0;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.buildControl button{
+    display: block;
+    padding: 5px;
+    margin: 5px;
+    outline: none;
+    border: 1px solid #bb700f;
+    background-color: rgb(230, 176, 27);
+    border-radius: 10px;
+}
+.label {
+    display: block;
+    color: chocolate;
+    font-size: larger;
+    text-transform: uppercase;
+}
