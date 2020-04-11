@@ -3,6 +3,7 @@ import Aux from "../../hoc/Aux"
 import Burger from "../../components/burger/burger"
 import BuildControl from "../../components/burger/buildControls/buildControls"
 import Modal from "../../components/UI/models";
+import axios from '../../axios_order'
 class BurgerBuilder extends Component {
     constructor(props) {
         super(props);
@@ -46,6 +47,13 @@ class BurgerBuilder extends Component {
         this.setState({
             checkout:!this.state.checkout
         })
+        const body ={
+            ingredients:this.state.ingredients,
+            price:this.state.price
+        }
+        axios.post('/order.json',body)
+        .then(res=>console.log(res))
+        .catch(err=>console.error(err))
     }
     
     render() { 
@@ -73,11 +81,11 @@ class BurgerBuilder extends Component {
                 <BuildControl 
                 addIngredient={this.addIngredient}
                 removeIngredient={this.removeIngredient}
-                disabled={this.state.disabled}
+                checkout={this.checkout}
+                text ={this.state.checkout ? null: <span>the Pice of Burger is </span>}
+                price={this.state.checkout ? null :this.state.price}
                 />             
-                <button onClick={this.checkout} style={button}>
-                    Check Out
-                </button>   
+                 
             </Aux>
          );
     }

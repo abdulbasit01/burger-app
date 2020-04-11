@@ -1,6 +1,7 @@
 .Modal{
-    box-shadow: 0px 4px 8px 0px rgba(190, 3, 94, 0.7);
+    box-shadow: 0px 4px 8px 0px rgba(122, 29, 74, 0.7);
     margin:10px;
     text-align: center;
     font-family: 'Spicy Rice', cursive;
+    transition: 3s;
 }
